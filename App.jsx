@@ -1,14 +1,13 @@
 import { useState } from 'react'
-import ColorPicker from './colorPicker2.jsx'
+import reactLogo from './assets/react.svg'
+
+import TodoList from './TodoList.jsx'
 
 function App() {
 
-    return (
-
-      <ColorPicker />
-    )
-
-  
+  return (
+      <TodoList/>
+  )
 }
 
 export default App
