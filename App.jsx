@@ -1,11 +1,14 @@
 import { useState } from 'react'
-import TodoList from './TodoList.jsx'
+import ColorPicker from './colorPicker2.jsx'
 
 function App() {
 
-   return(
-    <TodoList />
-   );
+    return (
+
+      <ColorPicker />
+    )
+
+  
 }
 
 export default App
