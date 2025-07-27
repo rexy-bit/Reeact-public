@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import ColorPicker from './colorPicker2.jsx'
+import reactLogo from './assets/react.svg'
+
+import PageReact from './Page.jsx'
 
 function App() {
 
-    return (
+  return(
+    <PageReact/>
+  );
 
-      <ColorPicker />
-    )
-
-  
 }
 
 export default App
