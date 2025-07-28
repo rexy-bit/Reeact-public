@@ -1,14 +1,17 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-
-import PageReact from './Page.jsx'
+import Header from './Components/Header.jsx'
+import Entrys from './Components/Entrys.jsx';
 
 function App() {
 
+  
   return(
-    <PageReact/>
-  );
+    <>
+    <Header />
 
+    <Entrys/>
+    </>
+  );
 }
 
 export default App
