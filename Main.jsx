@@ -1,38 +1,58 @@
 import React from "react";
 import Header from "./Header";
-import MemeInputs from "./MemeInputs";
-import Meme from "./Meme";
+import IngredientsInputs from "./IngredientsInputs";
+import IngredientsDisplay from "./IngredientsDisplay";
+import ReadyRecipe from "./ReadyRecipe";
+import Recipe from "./Recipe";
 export default function Main(){
 
-    const [meme, setMeme] = React.useState({
-        topText : "Some thing different",
-        imageUrl : "http://i.imgflip.com/1bij.jpg",
-        bottomText : "Walk into Mordor"
-    });
-    
-    const [allMemes, setAllMemes] = React.useState([]);
+    const [ingredients, setIngredients] = React.useState(()=>{
+        const saved = localStorage.getItem('ingredients');
+       return  saved ? JSON.parse(saved) : 
+
+        [
+            "tomatoes", "meet", "pasta", "basilic", "bread", "permesano"
+        ];
+});
+
+    const [recipe, setRecipe] = React.useState('');
+
 
     React.useEffect(()=>{
-        fetch('https://api.imgflip.com/get_memes')
-          .then(res=> res.json()) 
-             .then((data)=>{
-                setAllMemes(data.data.memes);
-             });
-    }, []);
+        localStorage.setItem('ingredients', JSON.stringify(ingredients));
+    }, [ingredients]);
+    
+    const recipeSection = React.useRef(null);
+
+    React.useEffect(()=>{
+        if(recipe && recipeSection.current){
+       recipeSection.current.scrollIntoView({behaviour : "smooth"});
+        }
+    }, [recipe]);
 
     return(
         <main>
-
             <Header/>
-            <MemeInputs
-            meme={meme}
-            setMeme={setMeme}
-            allMemes={allMemes}
-            setAllMemes={setAllMemes}
-
+            <IngredientsInputs
+             ingredients={ingredients}
+             setIngredients={setIngredients}
             />
-            <Meme
-             meme={meme}
+            <IngredientsDisplay
+            ingredients={ingredients}
+            setIngredients={setIngredients}
+            />
+
+            <ReadyRecipe
+            ingredients={ingredients}
+            setIngredients={setIngredients}
+            recipe={recipe}
+            setRecipe={setRecipe}
+            ref={recipeSection}
+            />
+
+            <Recipe
+            recipe={recipe}
+            ingredients={ingredients}
             />
         </main>
     )
