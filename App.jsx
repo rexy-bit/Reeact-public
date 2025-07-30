@@ -1,17 +1,10 @@
 import { useState } from 'react'
-import Header from './Components/Header.jsx'
-import Entrys from './Components/Entrys.jsx';
+import Main from './Components/Main'
 
 function App() {
-
-  
-  return(
-    <>
-    <Header />
-
-    <Entrys/>
-    </>
-  );
+   return(
+    <Main/>
+   )
 }
 
 export default App
