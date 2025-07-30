@@ -2,82 +2,78 @@ import React from "react";
 
 export default function MemeInputs(props){
 
-    const [topText, setTopText] = React.useState('');
-    const [bottomText, setBottomText] = React.useState('');
+     const [topText, setTopText] = React.useState('');
+     const [bottomText, setBottomText] = React.useState('');
 
-    function handleTopChange(event){
-        
+     function saveTopText(event){
         const value = event.target.value;
-    
-        setTopText(value);
-        props.setMeme(prev=>({
+
+         setTopText(value);
+
+         props.setMeme(prev=>({
             ...prev,
             topText : value
-        }));
-    }
+         }));
 
-    function handleBottomChange(event){
+     }
+
+     function saveBottomText(event){
+
         const value = event.target.value;
 
         setBottomText(value);
-        props.setMeme(prev => (
-            {
-                ...prev,
-                bottomText : value
-            }
-        ));
-    }
 
-    function getMemeImage(){
+        props.setMeme(prev=>({
+            ...prev,
+            bottomText: value
+        }));
+     }
 
+     function getImage(){
 
         const randomIndex = Math.floor(Math.random() * props.allMemes.length);
-        const generatedElement = props.allMemes[randomIndex];
+        const newImageUrl = props.allMemes[randomIndex].url;
 
-        props.setMeme(prev=> (
-            {
-                ...prev,
-                imageSrc : generatedElement.url
-            }
-        ));
+        props.setMeme(prev=>({
+            ...prev,
+            imageUrl : newImageUrl
+        }));
+     }
 
-        
-    }
+       return(
 
-    
-
-    return(
-
-        <div className="form">
- 
            <div className="inputs">
-            <label>Top Text
+ 
+             <div className="labels">
+              <label>Top Text
+                 <input 
+                 type="text" 
+                 className="in" 
+                 name="top"
+                 placeholder="Some thing different"
+                 value={topText}
+                 onChange={saveTopText}
+                 />
+              </label>
+
+              <label>Bottom Text
 
                   <input 
                   type="text" 
+                  name="bottom"
                   className="in"
-                  placeholder={props.meme.topText}
-                  name="topText"
-                  value={topText}
-                  onChange={handleTopChange}
+                  placeholder="Walk into Mordor"
+                  value={bottomText}
+                  onChange={saveBottomText}
+ 
                   />
-            </label>
+              </label>
+              </div>
 
-            <label>Bottom Text
-
-                <input type="text"
-                 className="in"
-                 placeholder="Walk into Mordor"
-                 bottom='bottomText'
-                 value={bottomText}
-                 onChange={handleBottomChange}
-                 />
-            </label>
-            </div>
-
-            <button className="get-button"
-             onClick={getMemeImage}
-            >Get a new meme image 🖼️</button>
-        </div>
-    );
+              <button 
+              className="get-button"
+              onClick={getImage}
+              >Get a new meme image</button>
+           </div>
+       );
 }
