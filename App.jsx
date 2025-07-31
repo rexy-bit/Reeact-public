@@ -1,13 +1,11 @@
 import { useState } from 'react'
-import Main from './Components/Main'
-
+import Todo from './Components/Todo'
 function App() {
+ 
 
-  return(
-    
-    <Main/>
-    
-  )
+return(
+  <Todo/>
+)
 }
 
 export default App
