@@ -1,117 +1,118 @@
+
 body{
-  width: 100%;
-  padding: 0;
+  font-family: poppins, arial;
   margin: 0;
-  font-family : roboto, arial;
+  padding: 0;
 }
-main{
+section{
+ 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+   width: 100%;
 }
 header{
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  width: 100%;
+  justify-content: left;
+    width: 100%;
+  box-shadow: 0px 2px 4px  rgba(0,0,0,0.5);
   gap : 10px;
-  height : 100px;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+  background-color: rgb(131, 62, 195);
+  color: white;
+  height : 80px;
 }
-form{
-    margin-top: 40px;
+:root{
+  width: 100%;
+
+}
+.troll-face{
+  margin-left: 15px;
+}
+.inputs{
+  margin-top : 40px;
+  display: flex;
+  flex-direction: column;
+  gap : 30px;
+}
+.inp{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap : 10px;
+  gap: 20px;
 }
-.in{
-  padding: 10px 15px;
-  border : 1px solid lightgray;
-  border-radius : 20px;
-  z-index: 1;
-}
-.add-button{
-  background-color: black;
-  color: white;
-  padding: 10px 15px;
-  border: 1px solid lightgray;
-  border-radius : 20px;
-  margin-left : -45px;
-  z-index: 3;
-  transform: scale(1);
-  transition: opacity 0.2s ease, transform 0.2s ease-in-out;
-  cursor: pointer;
-}
-.add-button:hover{
-  transform: scale(1.1);
-}
-.add-button:active{
-  transform: scale(1.05);
-}
-.display-ingredients{
-  margin-top: 40px;
-}
-.ingredients{
-  margin-left : 20px;
+label{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap : 5px;
+  gap: 5px;
+  font-weight: 550;
 }
-.ready-recipe{
-  padding: 5px 20px;
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap : 20px;
-  background-color: #F3E9DC;
-  border-radius : 10px;
-}
-.generate{
-  color: rgb(74, 74, 74);
-  font-size : 13px;
-  width : 150px;
+.in{
+  padding: 10px;
+  border: 1px solid lightgray;
+  font-size: 14px;
+  border-radius: 3px;
 }
 .get-button{
-  height : 30px;
-  width : 110px;
-  background-color: #CA7842;
+  height: 40px;
+  background-color: rgb(131, 62, 195);
   color: white;
-  border: 1px solid lightgray;
-  border-radius : 5px;
+  font-size : 15px;
+  font-weight: bold;
+  border : 1px solid lightgray;
+  border-radius : 3px;
   cursor: pointer;
-  font-weight: 550;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s;
 }
 .get-button:hover{
-  opacity : 0.8;
+  opacity: 0.8;
 }
 .get-button:active{
   opacity: 0.6;
 }
-@media(max-width : 375px){
-  .ready-recipe{
-    width : 250px;
-    gap : 10px;
-  }
-  .generate{
-    width : 100px;
-  }
-}
-.recipe{
-  margin-top: 40px;
+.meme{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: center; 
-  width : 80%;
+  position: relative;
+  margin-top : 40px;
+  margin-bottom : 50px;
+}
+.image{
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.meme > span{
+    position: absolute;
   text-align: center;
-  margin-bottom: 70px;
+  font-size : 2.2rem;
+  color : white;
+  font-weight : 600;
+  text-transform: uppercase;
+   font-family: impact, sans-serif;
+    margin-block: 15px;
+    padding-inline: 5px;
+    letter-spacing: 1px;
+        text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+}
+.top{
+  top : 0;
+}
+.bottom{
+  bottom: 0;
 }
