@@ -1,38 +1,48 @@
 import React from "react";
-import Header from "./Header";
-import MemeInputs from "./MemeInputs";
-import Meme from "./Meme";
+import WeatherInputs from "./WeatherInputs";
+import WeatherDisplay from "./WeatherDisplay";
+
 export default function Main(){
 
-    const [meme, setMeme] = React.useState({
-        topText : "Some thing different",
-        imageUrl : "http://i.imgflip.com/1bij.jpg",
-        bottomText : "Walk into Mordor"
+    const [city, setCity] = React.useState(()=>{
+        const saved = localStorage.getItem('city');
+
+        return saved ? JSON.parse(saved) : 
+          'Algiers'
     });
-    
-    const [allMemes, setAllMemes] = React.useState([]);
 
     React.useEffect(()=>{
-        fetch('https://api.imgflip.com/get_memes')
-          .then(res=> res.json()) 
-             .then((data)=>{
-                setAllMemes(data.data.memes);
-             });
-    }, []);
+        localStorage.setItem('city', JSON.stringify(city));
+    }, [city]);
+
+    const [weather, setWeather] = React.useState(()=>{
+        const saved = localStorage.getItem('weather');
+
+        return saved ? JSON.parse(saved) : 
+           null
+    });
+
+    React.useEffect(()=>{
+        localStorage.setItem('weather', JSON.stringify(weather));
+    }, [weather]);
+
 
     return(
         <main>
+            
+            <h1>Weather App</h1>
 
-            <Header/>
-            <MemeInputs
-            meme={meme}
-            setMeme={setMeme}
-            allMemes={allMemes}
-            setAllMemes={setAllMemes}
+            <WeatherInputs
+            city={city}
+            setCity={setCity}
+            weather={weather}
+            setWeather={setWeather}
 
             />
-            <Meme
-             meme={meme}
+
+            <WeatherDisplay
+             weather={weather}
+             setWeather={setWeather}
             />
         </main>
     )
