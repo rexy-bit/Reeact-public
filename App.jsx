@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import Main from './Components/Main'
-function App() {
 
+function App() {
   return(
     <Main/>
-  );
+  )
 }
 
 export default App
