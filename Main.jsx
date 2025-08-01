@@ -6,7 +6,7 @@ export default function Main(){
         const saved = localStorage.getItem('currentQuote');
 
         return saved ? JSON.parse(saved) : 
-           0
+            0
     });
 
     React.useEffect(()=>{
@@ -14,18 +14,14 @@ export default function Main(){
     }, [currentQuote]);
 
 
-
     return(
-
-        <main> 
+        <div className="container">
             <h1>Wisdom of Legends 🪶</h1>
-       <Quotes
-        currentQuote={currentQuote}
-        setCurrentQuote={setCurrentQuote}
-        />
-        </main>
 
+            <Quotes
+            currentQuote={currentQuote}
+            setCurrentQuote={setCurrentQuote}
+            />
+        </div>
     )
-    
-
 }
