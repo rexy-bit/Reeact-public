@@ -1,145 +1,124 @@
 body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+html{
+  scroll-behavior: smooth;
+
+}
+*{
+  box-sizing: border-box;
+}
+main{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: roboto, arial;
-  background-color: #F9F4EF;
-}
-.container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-h1{
-  color: #C19A6B;
-  font-size : 2.5em;
-  font-weight: 900;
-  text-decoration: underline;
-}
-.quote{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #C19A6B;
-  padding: 20px;
-  width : 500px;
-  border-radius : 10px;
-  margin-bottom: 100px;
-}
-.image{
-  width : 250px;
-  height: auto;
-  border-radius : 5px;
-  margin-top: 20px;
-}
-.others{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   
+  width: 100%;
 
 }
-.citation{
-  color:#1E1E1E;
-  font-size : 20px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 30px;
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(131, 62, 195);
+  color: white;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.5);
+  gap : 10px;
 }
-.author{
-  margin-top : 25px;
+.troll-face{
+  margin-left : 10px;
+}
+
+.inputs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap : 20px;
+  margin-top: 40px;
+}
+label{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap : 5px;
   font-size : 18px;
-  font-weight: bold;
-  text-align: right;
-  color: #8B0000;
-  text-decoration: underline;
-
 }
-.source{
-  margin-top : 20px;
-  font-weight: bold;
-}
-.era{
-  margin-top : 20px;font-weight: bold;
-  font-size: 17px;
-}
-.buttons{
+.inp{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap : 40px;
-  margin-top: 15px;
+  gap : 20px;
 }
-.left,.right{
-  font-size : 50px;
+.in{
+  padding: 10px;
+  font-size: 15px;
+  border : 1px solid lightgray;
+  border-radius: 5px;
+}
+.get-button{
+  width: 100%;
+  border: none;
+  background-color: rgb(131, 62, 195);
+  color: white;
+  height : 40px;
+  border-radius : 5px;
+  font-size : 16px;
+  font-weight: bold;
   cursor: pointer;
-  transform: scale(1);
-  font-weight: 900;
-  transition: transform 0.2s;
+  transition : opacity 0.2s;
+  margin-top : 15px;
 }
-.left:hover,.right:hover{
-  transform: scale(1.3);
+.get-button:hover{
+  opacity : 0.8;
 }
-.left:active,.right:active{
-  transform: scale(1.05);
+.get-button:active{
+  opacity : 0.6;
 }
-.current{
-  font-size : 17px;
-  font-weight: 550;
+.meme{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position : relative;
+  margin-top: 40px;
 }
-
-.zoom {
-  animation: zoomIn 0.6s ease-out;
+.image{
+  width : 600px;
+  height : auto;
+  border-radius : 4px;
 }
-
-@keyframes zoomIn {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+.meme > span{
+    position: absolute;
+  text-align: center;
+  font-size : 2.2rem;
+  color : white;
+  font-weight : 600;
+  text-transform: uppercase;
+   font-family: impact, sans-serif;
+    margin-block: 15px;
+    padding-inline: 5px;
+    letter-spacing: 1px;
+        text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
 }
-
-/* styles.css */
-.fade-in {
-  animation: fadeIn 0.6s ease-in-out;
+.top{
+  top : 0px;
 }
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media(max-width : 760px){
-  .quote{
-    width : 400px;
-  }
-}
-@media(max-width : 500px){
-  .quote{
-    width : 300px;
-    margin-top : 30px;
-  }
-  h1{
-    font-size : 1.8em;
-  }
-}
-@media(max-width : 420px){
-  .quote{
-    width: 280px;
-  }
+.bottom{
+  bottom: 0px;
 }
