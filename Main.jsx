@@ -1,48 +1,63 @@
 import React from "react";
 import Header from "./Header";
-import MemeInputs from "./MemeInputs";
-import MemeImage from "./MemeImage";
+import IngredientsInputs from "./IngredientsInputs";
+import IngredientsDisplay from "./IngredientsDisplay";
+import ReadyRecipe from "./ReadyRecipe";
+import Recipe from "./Recipe";
+
 export default function Main(){
 
-    const [meme, setMeme] = React.useState({
-        image : "http://i.imgflip.com/1bij.jpg",
-        topText : "Some thing different",
-        bottomText:"Walk into Mordor"
+    const [ingredients, setIngredients] = React.useState(()=>{
+        const saved = localStorage.getItem('ingredients');
+
+        return saved ? JSON.parse(saved) : 
+          ['tomato', 'chedar', 'bread', 'meet']
     });
 
-    const [allMeme, setAllMeme] = React.useState([]);
+    const [recipe, setRecipe] = React.useState('');
 
 
     React.useEffect(()=>{
-        fetch('https://api.imgflip.com/get_memes')
-          .then(res => res.json())
-            .then(data=>{
-            
-                setAllMeme(data.data.memes);
-            });
-    }, []);
+        localStorage.setItem('ingredients', JSON.stringify(ingredients));
+    }, [ingredients]);
 
+    const recipeSection = React.useRef();
+
+       React.useEffect(()=>{
+    
+        if(recipe && recipeSection.current){
+              recipeSection.current.scrollIntoView({behaviour : "smooth"});
+        }
+          
+         
+       }, [recipe])
     
 
-    return(
+    return (
         <main>
+           <Header/>
+           <IngredientsInputs
+           ingredients={ingredients}
+           setIngredients={setIngredients}
+           />
 
-            <Header/>
-            <MemeInputs 
-             meme={meme}
-             setMeme={setMeme}
-             allMeme={allMeme}
-             setAllMeme={setAllMeme}
-             
-            />
+           <IngredientsDisplay
+           ingredients={ingredients}
+           setIngredients={setIngredients}
+           />
 
-            <MemeImage
-            meme={meme}
-            setMeme={setMeme}
-            allMeme={allMeme}
-            setAllMem={setAllMeme}
-            />
+           <ReadyRecipe
+           ingredients={ingredients}
+           setIngredients={setIngredients}
+           recipe={recipe}
+           setRecipe={setRecipe}
+           ref={recipeSection}
+           />
 
+           <Recipe
+           ingredients={ingredients}
+           recipe={recipe}
+           />
         </main>
     )
 }
