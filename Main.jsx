@@ -1,63 +1,45 @@
 import React from "react";
-import Header from "./Header";
-import IngredientsInputs from "./IngredientsInputs";
-import IngredientsDisplay from "./IngredientsDisplay";
-import ReadyRecipe from "./ReadyRecipe";
-import Recipe from "./Recipe";
-
+import WeatherInputs from "./WeatherInputs";
+import Weather from "./Weather";
 export default function Main(){
 
-    const [ingredients, setIngredients] = React.useState(()=>{
-        const saved = localStorage.getItem('ingredients');
+    const [city, setCity] = React.useState(()=>{
+        const saved = localStorage.getItem('city');
 
         return saved ? JSON.parse(saved) : 
-          ['tomato', 'chedar', 'bread', 'meet']
+          'algiers'
     });
 
-    const [recipe, setRecipe] = React.useState('');
+    React.useEffect(()=>{
+        localStorage.setItem('city', JSON.stringify(city));
+    }, [city]);
 
+    const [weather, setWeather] = React.useState(()=>{
+        const saved = localStorage.getItem('weather');
+
+        return saved ? JSON.parse(saved) : 
+          null
+    });
 
     React.useEffect(()=>{
-        localStorage.setItem('ingredients', JSON.stringify(ingredients));
-    }, [ingredients]);
+        localStorage.setItem('weather', JSON.stringify(weather));
+    }, [weather]);
 
-    const recipeSection = React.useRef();
 
-       React.useEffect(()=>{
-    
-        if(recipe && recipeSection.current){
-              recipeSection.current.scrollIntoView({behaviour : "smooth"});
-        }
-          
-         
-       }, [recipe])
-    
-
-    return (
+    return(
         <main>
-           <Header/>
-           <IngredientsInputs
-           ingredients={ingredients}
-           setIngredients={setIngredients}
-           />
+            <h1>Weather App</h1>
+             <WeatherInputs
+             city={city}
+             setCity={setCity}
+             weather={weather}
+             setWeather={setWeather}
+             />
 
-           <IngredientsDisplay
-           ingredients={ingredients}
-           setIngredients={setIngredients}
-           />
-
-           <ReadyRecipe
-           ingredients={ingredients}
-           setIngredients={setIngredients}
-           recipe={recipe}
-           setRecipe={setRecipe}
-           ref={recipeSection}
-           />
-
-           <Recipe
-           ingredients={ingredients}
-           recipe={recipe}
-           />
+             <Weather
+             weather={weather}
+             setWeather={setWeather}
+             />
         </main>
-    )
+    );
 }
