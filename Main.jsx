@@ -1,27 +1,48 @@
 import React from "react";
-import Quotes from "./Quotes";
+import Header from "./Header";
+import MemeInputs from "./MemeInputs";
+import MemeImage from "./MemeImage";
 export default function Main(){
 
-    const [currentQuote, setCurrentQuote] = React.useState(()=>{
-        const saved = localStorage.getItem('currentQuote');
-
-        return saved ? JSON.parse(saved) : 
-            0
+    const [meme, setMeme] = React.useState({
+        image : "http://i.imgflip.com/1bij.jpg",
+        topText : "Some thing different",
+        bottomText:"Walk into Mordor"
     });
 
-    React.useEffect(()=>{
-        localStorage.setItem('currentQuote', JSON.stringify(currentQuote));
-    }, [currentQuote]);
+    const [allMeme, setAllMeme] = React.useState([]);
 
+
+    React.useEffect(()=>{
+        fetch('https://api.imgflip.com/get_memes')
+          .then(res => res.json())
+            .then(data=>{
+            
+                setAllMeme(data.data.memes);
+            });
+    }, []);
+
+    
 
     return(
-        <div className="container">
-            <h1>Wisdom of Legends 🪶</h1>
+        <main>
 
-            <Quotes
-            currentQuote={currentQuote}
-            setCurrentQuote={setCurrentQuote}
+            <Header/>
+            <MemeInputs 
+             meme={meme}
+             setMeme={setMeme}
+             allMeme={allMeme}
+             setAllMeme={setAllMeme}
+             
             />
-        </div>
+
+            <MemeImage
+            meme={meme}
+            setMeme={setMeme}
+            allMeme={allMeme}
+            setAllMem={setAllMeme}
+            />
+
+        </main>
     )
 }
