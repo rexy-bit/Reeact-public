@@ -1,12 +1,13 @@
 import React from "react";
-import troll from "../assets/troll-face.png"
+import gastroAi from "../assets/chef-claude-icon.png"
 export default function Header(){
-      
+
     return(
         <header>
-            <img src={troll} alt="troll-face" className="troll-face" width="70"/>
 
-            <h1>Meme Generator</h1>
+            <img src={gastroAi} alt='chef icon' width="70" className="chef-icon"/>
+
+            <h1>Gastro AI</h1>
         </header>
     );
 }
