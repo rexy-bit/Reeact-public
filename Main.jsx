@@ -1,45 +1,25 @@
-import React from "react";
-import WeatherInputs from "./WeatherInputs";
-import Weather from "./Weather";
+import React from "react"
+import MovieCard from "./MovieCard"
+import Home from "../Pages/Home"
+import { Routes, Route } from "react-router-dom"
+import Favorites from "../Pages/Favorites"
+import NavBar from "./NavBar"
+import { MovieProvider } from "../Contexts/MovieContext"
 export default function Main(){
 
-    const [city, setCity] = React.useState(()=>{
-        const saved = localStorage.getItem('city');
-
-        return saved ? JSON.parse(saved) : 
-          'algiers'
-    });
-
-    React.useEffect(()=>{
-        localStorage.setItem('city', JSON.stringify(city));
-    }, [city]);
-
-    const [weather, setWeather] = React.useState(()=>{
-        const saved = localStorage.getItem('weather');
-
-        return saved ? JSON.parse(saved) : 
-          null
-    });
-
-    React.useEffect(()=>{
-        localStorage.setItem('weather', JSON.stringify(weather));
-    }, [weather]);
-
-
-    return(
+     return(
+        <MovieProvider>
+        <div>
+            <NavBar/>
         <main>
-            <h1>Weather App</h1>
-             <WeatherInputs
-             city={city}
-             setCity={setCity}
-             weather={weather}
-             setWeather={setWeather}
-             />
-
-             <Weather
-             weather={weather}
-             setWeather={setWeather}
-             />
+           <Routes>
+             <Route path="/" element={<Home />}/>
+             <Route path="/favorites" element={<Favorites />}/>
+          </Routes>
         </main>
-    );
+
+        </div>
+        </MovieProvider>
+     )
+    
 }
