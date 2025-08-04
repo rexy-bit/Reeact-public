@@ -1,38 +1,12 @@
 import { useState } from 'react'
-import NavBar from './Components/NavBar'
-import {Routes, Route} from 'react-router-dom'
-import TodoInputs from './Components/TodoInputs'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
-import { TodoProvider } from './Contexts/TodoContext';
-import TodoList from './Components/TodoList';
-import Done from './pages/Done';
-import Undone from './pages/Undone';
 function App() {
-
   return(
-    <TodoProvider>
-  <div className='w-full'>
-      <NavBar/>
-
-      <main className='flex flex-col justify-center items-center'>
-        <Routes>
-          <Route path="/" element={
-               <>
-                 <TodoInputs/>
-                 <TodoList/>
-               </>
-
-          }/>
-      
-
-        
-          <Route path="/done" element={<Done/>}/>
-          <Route path="/undone" element={<Undone/>}/>
-        </Routes>
-      </main>
-  </div>
-  </TodoProvider>
-  );
+   <p className='p-[16px] bg-zinc-50 text-[30px] text-chestnut'>Chestnut Color + More styles</p>
+  )
 }
 
 export default App
