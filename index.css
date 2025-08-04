@@ -1,7 +1,16 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
 body{
-  background-color: oklch(42.4% 0.199 265.638);
-  padding-top : 55px;
-  font-family: sans-serif;
+  background-color: #10172a;
+}
+
+@theme{
+  --color-chestnut : #973F29;
+}
+@layer components{
+
+  .card{
+    @apply m-10 rounded-lg bg-white 
+  }
 }
