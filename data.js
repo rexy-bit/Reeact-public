@@ -1,115 +1,93 @@
-import marcAurele from "./assets/marc-aurele.jpg"
-import ceasar from "./assets/ceasar.jpg"
-import napoleon from "./assets/napoleon.jpg"
-import alexander from "./assets/alexander.jpg"
-import achilles from "./assets/achilles.jpg"
-import alexander2 from "./assets/alexander2.jpg"
-import alexander3 from "./assets/alexander3.jpg"
-import ceasar2 from "./assets/ceasar2.jpg"
-import leonidas from "./assets/leonidas.jpg"
-import leonidas2 from "./assets/leonidas2.jpg"
-import augustus from "./assets/augustus.jpg"
-import marc2 from "./assets/marc2.jpg"
-import achilles2 from "./assets/achilles2.jpg"
-import achilles3 from "./assets/achilles3.jpg"
-export default  [
-  {
-    text: "You have power over your mind – not outside events. Realize this, and you will find strength.",
-    author: "Marcus Aurelius",
-    image: marcAurele,
-    origin: "Meditations",
-    era: "Stoicism"
-  },
-  {
-    text: "Veni, vidi, vici.",
-    author: "Julius Caesar",
-    image: ceasar,
-    origin: "Letter to the Roman Senate",
-    era: "Rome"
-  },
-  {
-    text: "Glory is fleeting, but obscurity is forever.",
-    author: "Napoleon Bonaparte",
-    image: napoleon,
-    origin: "Speech",
-    era: "France"
-  },
-  {
-    text: "There is nothing impossible to him who will try.",
-    author: "Alexander the Great",
-    image: alexander,
-    origin: "Legend",
-    era: "Greece"
-  },{
-  text: "Come and take them.",
-  author: "Leonidas I",
-  image: leonidas,
-  origin: "Battle of Thermopylae",
-  era: "Sparta"
-},
-{
-  text: "Let none forget how menacing we are. We are lions.",
-  author: "Achilles",
-  image: achilles,
-  origin: "The Iliad (Homer)",
-  era: "Mythology"
-},
-{
-  text: "I found Rome a city of bricks and left it a city of marble.",
-  author: "Augustus",
-  image: augustus,
-  origin: "Attributed",
-  era: "Rome"
-},
-{
-  text: "The happiness of your life depends upon the quality of your thoughts.",
-  author: "Marcus Aurelius",
-  image: marc2,
-  origin: "Meditations",
-  era: "Stoicism"
-},{
-  text: "I am not afraid of an army of lions led by a sheep; I am afraid of an army of sheep led by a lion.",
-  author: "Alexander the Great",
-  image: alexander2,
-  origin: "Attributed",
-  era: "Greece"
-},
-{
-  text: "A tomb now suffices him for whom the whole world was not sufficient.",
-  author: "Alexander the Great",
-  image: alexander3,
-  origin: "After his death",
-  era: "Greece"
-},{
-  text: "It is better to create than to learn! Creating is the essence of life.",
-  author: "Julius Caesar",
-  image: ceasar2,
-  origin: "Attributed",
-  era: "Rome"
-},
-{
-  text: "I’d rather be a servant to a poor man than rule all the dead.",
-  author: "Achilles",
-  image: achilles3,
-  origin: "Homer, The Iliad",
-  era: "Mythology"
-},
-{
-  text: "Let me not then die ingloriously and without a struggle, but let me first do some great thing.",
-  author: "Achilles",
-  image: achilles2,
-  origin: "The Iliad, Book 22",
-  era: "Mythology"
-},
 
-{
-  text: "Cowards die many times before their deaths; the valiant never taste of death but once.",
-  author: "Julius Caesar",
-  image: ceasar,
-  origin: "Shakespeare’s Julius Caesar",
-  era: "Rome"
-}
+import book0 from './assets/images/parrain.jpg'
+import book1 from './assets/images/laws.jpg'
+import book2 from './assets/images/peste.jpg'
+import book3 from './assets/images/guerre.jpg'
 
+export default [
+     {
+        code : 0,
+        image : book0,
+        titre : 'The Godfather',
+        auteur : 'Mario Puzo',
+        categorie : 'Littérature',
+        prix : 2100,
+        description: "The Godfather is an epic tale of family, power, loyalty, and the dark underworld of organized crime. Written by Mario Puzo, this gripping novel takes readers into the life of Vito Corleone, the powerful head of the Corleone crime family. As he maneuvers the dangerous world of rival gangs, politics, and betrayal, his youngest son Michael is drawn into a life he never intended to lead. Richly layered with themes of honor, vengeance, and legacy, the novel captures the emotional complexity of a family torn between tradition and survival. It explores how absolute power can both protect and destroy those who wield it. A masterpiece of modern literature, The Godfather remains a cultural landmark, delving into the human cost of crime and ambition with unforgettable characters and storytelling.",
+          keyWords: [
+                    "mafia",
+                    "family",
+                    "corleone",
+                    "crime",
+                    "honor",
+                    "violence",
+                    "power",
+                    "don vito",
+                    "revenge",
+                    "new york"
+                ]
 
+    },{
+        code : 1,
+        image : book1,
+        titre : 'The 48 laws of power',
+        auteur : 'Robert Green',
+        categorie : 'Développement',
+        prix : 3500,
+        description: "The 48 Laws of Power by Robert Greene is a bold and provocative manual on the dynamics of power, influence, and manipulation. Drawing from thousands of years of history, philosophy, and political strategy, Greene distills timeless lessons from historical figures like Machiavelli, Sun Tzu, and Napoleon. Each law is illustrated with real-life stories and practical applications, giving readers a toolkit to rise in competitive environments, whether in business, politics, or personal life. With its sharp tone and unapologetic stance, the book encourages readers to be aware of power dynamics in everyday interactions and to use them to their advantage. Controversial, enlightening, and meticulously researched, this book has become a modern classic in self-development literature.",
+        keyWords: [
+            "power",
+            "strategy",
+            "manipulation",
+            "authority",
+            "psychology",
+            "influence",
+            "law",
+            "success",
+            "control",
+            "leadership"
+            ]
 
-];
+    },{
+        code : 2,
+        image : book2,
+        titre : 'La peste',
+        auteur : 'Albert Camus',
+        categorie : 'Littérature',
+        prix : 1300,
+        description: "La Peste (The Plague) by Albert Camus is a philosophical novel that examines human suffering, resilience, and moral responsibility in the face of a devastating epidemic. Set in the Algerian city of Oran, the story follows Dr. Bernard Rieux as he witnesses a deadly outbreak of plague and the varied reactions of the townspeople. Through its existential themes and understated prose, Camus explores how individuals confront meaninglessness, isolation, and fear. The novel is not just a tale about disease, but a profound reflection on the human condition and the absurdity of life. La Peste remains a timeless exploration of how people seek dignity and compassion in the midst of chaos and uncertainty.",
+        keyWords: [
+            "plague",
+            "algeria",
+            "camus",
+            "existentialism",
+            "suffering",
+            "death",
+            "absurdism",
+            "resistance",
+            "epidemic",
+            "humanity"
+            ]
+
+    },{
+        code : 3,
+        image : book3,
+        titre : 'L\'art de la guerre',
+        auteur : 'Sun Tzu',
+        categorie : 'Développement',
+        prix : 1700,
+        description: "The Art of War by Sun Tzu is one of the most influential treatises on strategy and warfare ever written. Dating back to ancient China, this concise and profound guide offers timeless wisdom on leadership, conflict resolution, and tactical thinking. Each of its thirteen chapters focuses on a different aspect of warfare—from planning and terrain to deception and morale—emphasizing flexibility, patience, and psychological insight. While originally intended for military generals, its principles have been embraced in modern times by business leaders, athletes, and politicians. The Art of War teaches that victory is achieved not only through strength, but through knowledge, timing, and an understanding of human nature. A classic text that transcends time, culture, and profession.",
+          keyWords: [
+            "strategy",
+            "war",
+            "tactics",
+            "military",
+            "leadership",
+            "philosophy",
+            "discipline",
+            "conflict",
+            "sun tzu",
+            "victory"
+            ]
+
+    }
+]
