@@ -1,12 +1,53 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import Header from './Components/Header'
+import Store from './Components/Store'
+import { SearchProvider } from './Contexts/SearchContext'
+import { DescriptionProvider } from './Contexts/DescriptionContext'
+import { Routes, Route } from 'react-router-dom'
+import Description from './Pages/Description'
+import { CartProvider } from './Contexts/CartContext'
+import Cart from "./Pages/Cart"
 function App() {
-  return(
-   <p className='p-[16px] bg-zinc-50 text-[30px] text-chestnut'>Chestnut Color + More styles</p>
-  )
+ 
+   
+
+     return(
+
+        <CartProvider>
+        <DescriptionProvider>
+        <SearchProvider>
+        <div>
+            
+            
+            <main className='flex flex-col w-full'>
+                
+                <Routes>
+                    
+                    <Route path="/" element={
+                        <>
+                        <Header/>
+                        <Store/>
+                        </>
+                        }/>
+
+                    <Route path="/description" element={
+                        <>
+                        <Header/>
+                        <Description/>
+                        </>
+                        }/>
+
+                        <Route path="/cart" element={<Cart/>} />
+                    
+                </Routes>
+                
+                
+            </main>
+        </div>
+        </SearchProvider>
+        </DescriptionProvider>
+        </CartProvider>
+     )
 }
 
 export default App
