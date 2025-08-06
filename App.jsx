@@ -7,6 +7,9 @@ import { Routes, Route } from 'react-router-dom'
 import Description from './Pages/Description'
 import { CartProvider } from './Contexts/CartContext'
 import Cart from "./Pages/Cart"
+import { OrderProvider } from './Contexts/OrderContext'
+import OrderMain from './OrderComponents.jsx/OrderMain'
+import Search from './Pages/Search'
 function App() {
  
    
@@ -14,6 +17,8 @@ function App() {
      return(
 
         <CartProvider>
+        <OrderProvider>
+        
         <DescriptionProvider>
         <SearchProvider>
         <div>
@@ -38,6 +43,20 @@ function App() {
                         }/>
 
                         <Route path="/cart" element={<Cart/>} />
+
+                        <Route path="/order" element={
+                            <>
+                            <Header/>
+                            <OrderMain/>
+                            </>
+                            }/>
+
+                         <Route path="/search" element={
+                            <>
+                              <Header/>
+                              <Search/>
+                            </>
+                         }/>
                     
                 </Routes>
                 
@@ -46,7 +65,9 @@ function App() {
         </div>
         </SearchProvider>
         </DescriptionProvider>
+        </OrderProvider>
         </CartProvider>
+        
      )
 }
 
