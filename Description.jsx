@@ -1,55 +1,37 @@
-import React from "react";
+
+import StarsRating from "../StoreComponents.jsx/StarRating";
 import { useDescriptionContext } from "../Contexts/DescriptionContext";
-import { useCartContext } from "../Contexts/CartContext";
 export default function Description(){
 
+    const {descriptionItem} = useDescriptionContext();
 
-       const {currentBook} = useDescriptionContext();
-       const [msg, setMsg] = React.useState({
-        color : "red",
-        text:'',
-        show : false
-       });
 
-       const {addToCart} = useCartContext();
 
-    if(currentBook === null){
-        return(
-            <h2>Error no currentBook found</h2>
-        );
-    }
     return(
+        <div className="flex flex-col justify-center items-center w-full">
+            <h1 className="text-[2em] font-black mt-20 text-shadow-blue-950 underline max-[1100px]:w-100 text-center max-[1100px]:text-[1.2em] max-[410px]:w-90">{descriptionItem.nom} description:</h1>
 
-      <section className="flex flex-col content-center items-center gap-20">
-        <h1 className="mt-15 text-yellow-500 text-3xl font-black underline">{currentBook.titre}</h1>
+            <div className="flex flex-row mt-13 w-[80%] p-4 border border-blue-950 rounded-lg mb-20 max-[1100px]:flex max-[1100px]:flex-col max-[1100px]:content-center max-[1100px]:items-center max-[1100px]:w-[90%]">
+                <div className="flex flex-col content-center items-center gap-7 w-[25%] max-[1100px]:w-full">
+                    <div className="bg-white">
+                    <img src={descriptionItem.image} alt={descriptionItem.nom} className="w-[180px] h-[230px] object-contain p-3"/>
+                    </div>
 
-         {msg.show && 
-             <p style={{color : msg.color}} className="fixed p-5 bg-gray-200 shadow-xl text-[20px] top-50 rounded-lg font-bold">{msg.text}</p>
-           }
-        <div className="flex flex-row content-center w-[80%] items-center gap-10 p-5 border-2 border-amber-500 rounded-[5px] mb-20 max-[1050px]:flex-col max-[1050px]:p-4">
+                    <button className="h-[40px] bg-blue-950 text-white font-bold rounded-3xl cursor-pointer transition-opacity duration-200 hover:opacity-80 active:opacity-60 w-[120px]">Add to Cart</button>
+                </div>
 
-       
-            <div className="flex flex-col items-center content-center gap-10 w-[250px]">
-                
-                   <img src={currentBook.image} alt={currentBook.titre} className="w-[250px] h-[300px] object-contain"/>
-               
-      
-
-                <button className="w-[110px] text-white bg-yellow-500 h-[35px] rounded-2xl text-[14px] font-bold cursor-pointer transition-opacity duration-200 hover:opacity-80 active:opacity-60" onClick={()=>addToCart(currentBook, setMsg)}>Add to Cart</button>
-            </div>
-
-               
-
-            <div className="w-[70%] max-[1050px]:w-full max-[1050px]:p-3 max-[1050px]:flex max-[1050px]:flex-col max-[1050px]:content-center max-[1050px]:items-center">
-                 <h2 className="mb-3 text-[2em] text-amber-500 font-bold">{currentBook.titre}</h2>
-                 <h3 className="text-[1.2em]">by <span className="ml-1 text-yellow-500 text-[1.3em] font-bold">{currentBook.auteur}</span></h3>
-                 <p className="text-lg mt-2 ">- Categorie : {currentBook.categorie}</p>
-                 <p className="text-[17px] mt-2 max-[1050px]:text-center max-[600px]:leading-6 max-[600px]:text-[16px]">- Description : {currentBook.description}</p>
-                 <p className="mt-2 font-bold">- Price : {currentBook.prix} Dzd</p>
+                <div className="w-[75%] max-[1100px]:flex max-[1100px]:flex-col max-[1100px]:center-center max-[1100px]:items-center max-[1100px]:mt-10 max-[1100px]:w-full max-[1100px]:px-2">
+                    <h1 className="text-[1.4em] text-shadow-blue-950 font-bold max-[1100px]:text-center">{descriptionItem.nom}</h1>
+                    <div className="flex flex-col gap-2 mt-2">
+                        <p className="text-[1.2em]">- Categorie : {descriptionItem.categorie}.</p>
+                        <p className="text-[17px] max-[1100px]:text-[16px]">- Description : {descriptionItem.description}</p>
+                        <StarsRating
+                          note={descriptionItem.note}
+                        />
+                         <p className="text-[1.2em]">{descriptionItem.prix} &euro;</p>
+                    </div>
+                </div>
             </div>
         </div>
-
-
-        </section>
-    );
+    )
 }
