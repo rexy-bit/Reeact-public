@@ -1,23 +1,17 @@
-import React from "react";
-
+import ItemCard from "../StoreComponents.jsx/ItemCard";
 import data from "../data";
-import BookCard from "./BookCard";
-
 export default function Store(){
 
-   
-
-    
     return(
-        <div className="w-full flex flex-wrap justify-center items-center gap-[30px] mt-10 mb-30">
-            {data.map((book)=>{
+         <div className="pt-[50px] mt-30 flex flex-wrap gap-20 px-10 items-center justify-center">
+            {data.map((item)=>{
                 return(
-               <BookCard
-               book={book}
-               key={book.code}
-               />
+                    <ItemCard
+                      item={item}
+                      key={item.code}
+                    />
                 )
             })}
-        </div>
+         </div>
     )
 }
