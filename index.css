@@ -14,3 +14,9 @@ html{
     box-sizing: border-box;
 }
 
+@layer components{
+
+  .headerLink{
+    @apply transition-colors duration-200 hover:text-blue-600 active:text-blue-400
+  }
+}
