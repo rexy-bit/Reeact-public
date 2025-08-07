@@ -1,93 +1,104 @@
 
-import book0 from './assets/images/parrain.jpg'
-import book1 from './assets/images/laws.jpg'
-import book2 from './assets/images/peste.jpg'
-import book3 from './assets/images/guerre.jpg'
-
+import image0 from "./assets/images/iphone16.jpg"
+import image1 from "./assets/images/dell1.jpg"
+import image2 from "./assets/images/macBook1.jpg"
+import image4 from "./assets/images/appleWatch1.jpg"
 export default [
-     {
-        code : 0,
-        image : book0,
-        titre : 'The Godfather',
-        auteur : 'Mario Puzo',
-        categorie : 'Littérature',
-        prix : 2100,
-        description: "The Godfather is an epic tale of family, power, loyalty, and the dark underworld of organized crime. Written by Mario Puzo, this gripping novel takes readers into the life of Vito Corleone, the powerful head of the Corleone crime family. As he maneuvers the dangerous world of rival gangs, politics, and betrayal, his youngest son Michael is drawn into a life he never intended to lead. Richly layered with themes of honor, vengeance, and legacy, the novel captures the emotional complexity of a family torn between tradition and survival. It explores how absolute power can both protect and destroy those who wield it. A masterpiece of modern literature, The Godfather remains a cultural landmark, delving into the human cost of crime and ambition with unforgettable characters and storytelling.",
-          keyWords: [
-                    "mafia",
-                    "family",
-                    "corleone",
-                    "crime",
-                    "honor",
-                    "violence",
-                    "power",
-                    "don vito",
-                    "revenge",
-                    "new york"
-                ]
+        {
+        code:  0,
+        image : image0,
+        nom: 'Apple iPhone 16 (128 Go) - Outremer',
+        note : 4.5,
+        description : 'L’iPhone 16 combine performance, design et intelligence pour répondre aux besoins du quotidien. Équipé d’un écran OLED lumineux de 6,3 pouces, il offre une immersion visuelle remarquable, idéale pour le streaming, les jeux et la navigation. Sa puce A18 Bionic assure une rapidité impressionnante dans toutes les tâches, tandis que le double capteur photo 48 MP capture des images nettes et détaillées, même en basse lumière. Grâce au port USB‑C, la recharge est plus rapide et plus pratique, et l’autonomie a été optimisée pour durer toute la journée. L’iPhone 16 tourne sous iOS 18 avec des fonctions avancées d’intelligence artificielle, de sécurité renforcée et de personnalisation, le tout dans un design épuré en aluminium recyclable, disponible en plusieurs coloris modernes.',
+        prix : 870,
+        stock : 3,
+        categorie : "mobile",
+        keyWords :  ["iphone", "apple","iPhone 16",
+      "Apple iPhone 16",
+      "smartphone Apple",
+      "USB-C",
+      "A18 Bionic",
+      "double caméra 48 MP",
+      "iOS 18",
+      "iPhone avec IA",
+      "recharge rapide",
+      "écran OLED 6.3 pouces"]
 
     },{
-        code : 1,
-        image : book1,
-        titre : 'The 48 laws of power',
-        auteur : 'Robert Green',
-        categorie : 'Développement',
-        prix : 3500,
-        description: "The 48 Laws of Power by Robert Greene is a bold and provocative manual on the dynamics of power, influence, and manipulation. Drawing from thousands of years of history, philosophy, and political strategy, Greene distills timeless lessons from historical figures like Machiavelli, Sun Tzu, and Napoleon. Each law is illustrated with real-life stories and practical applications, giving readers a toolkit to rise in competitive environments, whether in business, politics, or personal life. With its sharp tone and unapologetic stance, the book encourages readers to be aware of power dynamics in everyday interactions and to use them to their advantage. Controversial, enlightening, and meticulously researched, this book has become a modern classic in self-development literature.",
-        keyWords: [
-            "power",
-            "strategy",
-            "manipulation",
-            "authority",
-            "psychology",
-            "influence",
-            "law",
-            "success",
-            "control",
-            "leadership"
-            ]
+        code:  1,
+        image : image1,
+        nom: 'Dell Inspiron 15 3535',
+        note : 4,
+        description : 'Le Dell Inspiron 15 3535 est un ordinateur portable élégant et performant conçu pour répondre aux besoins du quotidien, que ce soit pour le travail, les études ou les loisirs. Doté d’un écran 15,6 pouces Full HD (1920 x 1080), il offre une excellente qualité d’affichage pour le multimédia et la bureautique. Son puissant processeur AMD Ryzen 5 7520U, associé à la carte graphique AMD Radeon, garantit une navigation fluide, un multitâche efficace et une bonne réactivité. Il est équipé de 8 Go de RAM et d’un SSD de 512 Go, assurant un démarrage rapide et un espace de stockage confortable pour vos fichiers. Livré avec Windows 11 Home préinstallé, ce modèle intègre un clavier AZERTY français ergonomique et une finition noire sobre et professionnelle, idéale pour un usage quotidien à la maison ou au bureau.',
+        prix : 1035,
+        stock : 2,
+        categorie : 'pc',
+        keyWords :  [  "Dell Inspiron 15",
+  "Inspiron 3535",
+  "ordinateur portable Dell",
+  "Dell Ryzen 5",
+  "AMD Ryzen 7520U",
+  "AMD Radeon Graphics",
+  "ordinateur 15.6 pouces",
+  "écran Full HD",
+  "8Go RAM",
+  "512Go SSD",
+  "Windows 11 Home",
+  "clavier AZERTY",
+  "PC portable bureautique",
+  "ordinateur étudiant",
+  "ordinateur professionnel",
+  "Dell noir"]
 
     },{
-        code : 2,
-        image : book2,
-        titre : 'La peste',
-        auteur : 'Albert Camus',
-        categorie : 'Littérature',
-        prix : 1300,
-        description: "La Peste (The Plague) by Albert Camus is a philosophical novel that examines human suffering, resilience, and moral responsibility in the face of a devastating epidemic. Set in the Algerian city of Oran, the story follows Dr. Bernard Rieux as he witnesses a deadly outbreak of plague and the varied reactions of the townspeople. Through its existential themes and understated prose, Camus explores how individuals confront meaninglessness, isolation, and fear. The novel is not just a tale about disease, but a profound reflection on the human condition and the absurdity of life. La Peste remains a timeless exploration of how people seek dignity and compassion in the midst of chaos and uncertainty.",
-        keyWords: [
-            "plague",
-            "algeria",
-            "camus",
-            "existentialism",
-            "suffering",
-            "death",
-            "absurdism",
-            "resistance",
-            "epidemic",
-            "humanity"
-            ]
+        code:  2,
+        image : image2,
+        nom: 'Apple MacBook Air 13 Pouces M4',
+        note : 4.5,
+        description : "Le nouveau MacBook Air 13 pouces avec puce Apple M4 redéfinit la performance et l\'efficacité dans un design ultra-fin. Spécialement conçu pour tirer parti d'Apple Intelligence, il offre une expérience fluide, intelligente et réactive au quotidien. Son superbe écran Liquid Retina de 13,6 pouces affiche des couleurs éclatantes et des détails précis, idéal pour le travail créatif, les études ou le divertissement. Grâce à ses 16 Go de mémoire unifiée et son SSD de 256 Go, ce MacBook Air garantit un multitâche sans compromis et un démarrage instantané. Il intègre également Touch ID pour une sécurité renforcée et une connexion rapide. Sa finition élégante Minuit ajoute une touche de raffinement, le tout dans un boîtier léger et silencieux, parfait pour une mobilité optimale.",
+        prix : 1250,
+        stock : 1,
+        categorie : 'pc',
+        keyWords :  [   "MacBook Air M4",
+  "Apple MacBook 13 pouces",
+  "ordinateur portable Apple",
+  "MacBook M4 puce",
+  "Apple Intelligence",
+  "écran Liquid Retina",
+  "MacBook Air 2025",
+  "16 Go RAM unifiée",
+  "256 Go SSD",
+  "Touch ID MacBook",
+  "Apple Minuit",
+  "Mac portable Apple",
+  "ordinateur étudiant Apple",
+  "MacBook bureautique",
+  "MacBook pour montage vidéo"]
 
     },{
-        code : 3,
-        image : book3,
-        titre : 'L\'art de la guerre',
-        auteur : 'Sun Tzu',
-        categorie : 'Développement',
-        prix : 1700,
-        description: "The Art of War by Sun Tzu is one of the most influential treatises on strategy and warfare ever written. Dating back to ancient China, this concise and profound guide offers timeless wisdom on leadership, conflict resolution, and tactical thinking. Each of its thirteen chapters focuses on a different aspect of warfare—from planning and terrain to deception and morale—emphasizing flexibility, patience, and psychological insight. While originally intended for military generals, its principles have been embraced in modern times by business leaders, athletes, and politicians. The Art of War teaches that victory is achieved not only through strength, but through knowledge, timing, and an understanding of human nature. A classic text that transcends time, culture, and profession.",
-          keyWords: [
-            "strategy",
-            "war",
-            "tactics",
-            "military",
-            "leadership",
-            "philosophy",
-            "discipline",
-            "conflict",
-            "sun tzu",
-            "victory"
-            ]
+        code:  4,
+        image : image4,
+        nom: 'Apple Watch Series 10 (42 mm GPS)',
+        note : 3.5,
+        description : "L’Apple Watch Series 10 (42 mm GPS) allie élégance, performance et engagement environnemental. Dotée d’un boîtier en aluminium noir de jais et d’une boucle sport encre violette, elle offre un style moderne et raffiné adapté à toutes les occasions. Grâce à ses fonctionnalités avancées, cette montre connectée vous accompagne dans votre quotidien : suivi précis de l’activité physique, surveillance de la fréquence cardiaque, application ECG, et bien plus encore. Son autonomie optimisée et son intégration parfaite avec l’écosystème Apple la rendent indispensable, aussi bien pour les sportifs que pour les utilisateurs soucieux de leur bien-être. Conçue avec des matériaux neutres en carbone, elle reflète également un choix responsable en faveur de l’environnement.",
+        prix : 850,
+        stock : 4,
+        categorie : 'watch',
+        keyWords :  ["Apple Watch Series 10",
+  "montre connectée Apple",
+  "Apple Watch 42 mm",
+  "GPS Apple Watch",
+  "boîtier aluminium noir de jais",
+  "boucle sport encre violette",
+  "montre fitness Apple",
+  "Apple Watch ECG",
+  "montre santé Apple",
+  "Apple Watch neutre en carbone",
+  "montre sport Apple",
+  "suivi activité Apple Watch",
+  "Apple Watch femme homme",
+  "montre Apple pour iPhone",
+  "montre intelligente Apple 2025"]
 
     }
 ]
