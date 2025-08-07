@@ -1,74 +1,46 @@
 import { useState } from 'react'
-import Header from './Components/Header'
-import Store from './Components/Store'
-import { SearchProvider } from './Contexts/SearchContext'
+import { Route, Routes } from 'react-router-dom'
+import HomeHeader from './HomeComponents.jsx/HomeHeader'
+import HomeText from './HomeComponents.jsx/HomeText'
+import SecondHeader from './StoreComponents.jsx/SecondHeader'
+import Store from './Pages/Store'
 import { DescriptionProvider } from './Contexts/DescriptionContext'
-import { Routes, Route } from 'react-router-dom'
 import Description from './Pages/Description'
-import { CartProvider } from './Contexts/CartContext'
-import Cart from "./Pages/Cart"
-import { OrderProvider } from './Contexts/OrderContext'
-import OrderMain from './OrderComponents.jsx/OrderMain'
+import { SearchProvider } from './Contexts/SearchContext'
 import Search from './Pages/Search'
 function App() {
- 
-   
 
-     return(
+  return(
+    <SearchProvider>
+    <DescriptionProvider>
+    <main>
+    <HomeHeader/>
 
-        <CartProvider>
-        <OrderProvider>
-        
-        <DescriptionProvider>
-        <SearchProvider>
-        <div>
-            
-            
-            <main className='flex flex-col w-full'>
-                
-                <Routes>
-                    
-                    <Route path="/" element={
-                        <>
-                        <Header/>
-                        <Store/>
-                        </>
-                        }/>
+    <Routes>
 
-                    <Route path="/description" element={
-                        <>
-                        <Header/>
-                        <Description/>
-                        </>
-                        }/>
+       <Route path='/' element={<HomeText/>}/>
+       <Route path='/store' element={<>
+           <SecondHeader/>
+           <Store/>
+       </>}/>
 
-                        <Route path="/cart" element={<Cart/>} />
+       <Route path="/description" element={
+           <Description/>
 
-                        <Route path="/order" element={
-                            <>
-                            <Header/>
-                            <OrderMain/>
-                            </>
-                            }/>
+       }/>
 
-                         <Route path="/search" element={
-                            <>
-                              <Header/>
-                              <Search/>
-                            </>
-                         }/>
-                    
-                </Routes>
-                
-                
-            </main>
-        </div>
-        </SearchProvider>
-        </DescriptionProvider>
-        </OrderProvider>
-        </CartProvider>
-        
-     )
+       <Route path="/search" element={
+        <>
+        <SecondHeader/>
+         <Search/>
+         </>
+       }/>
+    </Routes>
+
+     </main>
+     </DescriptionProvider>
+     </SearchProvider>
+  )
 }
 
 export default App
