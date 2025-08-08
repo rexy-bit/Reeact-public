@@ -6,13 +6,13 @@ export default [
         price : 0
     },{
         id : "express",
-        name : "600 Dzd - Shipping",
+        name : "4.99 € - Shipping",
         delayDays : 2,
-        price : 600
+        price : 4.99
     },{
         id : "nextDay",
-        name : "900 Dzd - Shipping",
+        name : "9.99 € - Shipping",
         delayDays : 1,
-        price : 900
+        price : 9.99
     }
 ]
