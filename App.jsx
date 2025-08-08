@@ -8,12 +8,16 @@ import { DescriptionProvider } from './Contexts/DescriptionContext'
 import Description from './Pages/Description'
 import { SearchProvider } from './Contexts/SearchContext'
 import Search from './Pages/Search'
+import { CartProvider } from './Contexts/CartContext'
+import CartHeader from './CartComponents/CartHeader'
+import Cart from './Pages/Cart'
 function App() {
 
   return(
+    <CartProvider>
     <SearchProvider>
     <DescriptionProvider>
-    <main>
+    <main className='flex justify-center items-center'>
     <HomeHeader/>
 
     <Routes>
@@ -35,11 +39,20 @@ function App() {
          <Search/>
          </>
        }/>
+
+       <Route path='/cart' element={
+        <>
+          <CartHeader/>
+          <Cart/>
+        </>
+       }/>
+
     </Routes>
 
      </main>
      </DescriptionProvider>
      </SearchProvider>
+     </CartProvider>
   )
 }
 
