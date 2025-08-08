@@ -19,4 +19,8 @@ html{
   .headerLink{
     @apply transition-colors duration-200 hover:text-blue-600 active:text-blue-400
   }
+
+  .plusButton{
+    @apply h-7 w-8 bg-blue-950 text-white font-bold rounded-lg cursor-pointer transition-opacity duration-200 hover:opacity-80 active:opacity-60
+  }
 }
